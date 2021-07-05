@@ -6,7 +6,7 @@ public class SFXPlay : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private AudioSource BGMSource;
+    private AudioSource SFXSource;
     private GameObject[] musics;
 
     // Start is called before the first frame update
@@ -20,17 +20,17 @@ public class SFXPlay : MonoBehaviour
         }
 
         DontDestroyOnLoad(transform.gameObject);
-        BGMSource = GetComponent<AudioSource>();
+        SFXSource = GetComponent<AudioSource>();
     }
 
 
     public void PlayMusic()
     {
-        if (BGMSource.isPlaying) return;
-        BGMSource.Play();
+        if (SFXSource.isPlaying) return;
+        SFXSource.Play();
     }
     public void StopMusic()
     {
-        BGMSource.Stop();
+        SFXSource.Stop();
     }
 }

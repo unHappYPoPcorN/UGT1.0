@@ -7,7 +7,6 @@ public class Slide : MonoBehaviour
 {
     Slider slHP;
     float timer = 0;
-    float endtimer = 0.0f;
 
     bool goright = true;
 
