@@ -48,7 +48,7 @@ public class DbGauge : MonoBehaviour
 
         if (timer > endtimer)
         {
-            slDb.value--;
+            slDb.value = slDb.value - 2;
             timer = 0;
         }
 

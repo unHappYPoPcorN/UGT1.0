@@ -40,9 +40,10 @@
      <Compile Include="Assets\Slide.cs" />
      <Compile Include="Assets\Scenes\gameManager.cs" />
      <Compile Include="Assets\SFXPlay.cs" />
+     <Compile Include="Assets\DbGauge.cs" />
      <Compile Include="Assets\AudioPlay.cs" />
      <Compile Include="Assets\BGMSlide.cs" />
-     <Compile Include="Assets\DbGauge.cs" />
+     <Compile Include="Assets\timer.cs" />
      <None Include="Assets\CasualGameBGM05\ReadMe.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
