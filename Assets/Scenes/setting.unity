@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 399888579}
   - component: {fileID: 399888580}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SFXVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,10 +206,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1887049707}
   m_HandleRect: {fileID: 529441969}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -858,7 +858,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\uB3CC\uC544\uAC00\uAE30"
 --- !u!222 &758929465
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1419,7 +1419,7 @@ GameObject:
   - component: {fileID: 1796127464}
   - component: {fileID: 1796127463}
   m_Layer: 5
-  m_Name: Button
+  m_Name: GoMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1817,7 +1817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "SFX\uC7AC\uC0DD"
 --- !u!222 &2002394210
 CanvasRenderer:
   m_ObjectHideFlags: 0

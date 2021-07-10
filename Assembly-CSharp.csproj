@@ -36,14 +36,16 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Slide2.cs" />
-     <Compile Include="Assets\Slide.cs" />
-     <Compile Include="Assets\Scenes\gameManager.cs" />
-     <Compile Include="Assets\SFXPlay.cs" />
-     <Compile Include="Assets\DbGauge.cs" />
-     <Compile Include="Assets\AudioPlay.cs" />
-     <Compile Include="Assets\BGMSlide.cs" />
-     <Compile Include="Assets\timer.cs" />
+     <Compile Include="Assets\Script\subMenu.cs" />
+     <Compile Include="Assets\Script\Slide2.cs" />
+     <Compile Include="Assets\Script\Slide.cs" />
+     <Compile Include="Assets\Script\gameManager.cs" />
+     <Compile Include="Assets\Script\SFXPlay.cs" />
+     <Compile Include="Assets\Script\Tab.cs" />
+     <Compile Include="Assets\Script\DbGauge.cs" />
+     <Compile Include="Assets\Script\AudioPlay.cs" />
+     <Compile Include="Assets\Script\timer.cs" />
+     <Compile Include="Assets\Script\BGMSlide.cs" />
      <None Include="Assets\CasualGameBGM05\ReadMe.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
