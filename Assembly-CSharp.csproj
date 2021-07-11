@@ -42,6 +42,7 @@
      <Compile Include="Assets\Script\gameManager.cs" />
      <Compile Include="Assets\Script\SFXPlay.cs" />
      <Compile Include="Assets\Script\Tab.cs" />
+     <Compile Include="Assets\Script\SQL.cs" />
      <Compile Include="Assets\Script\DbGauge.cs" />
      <Compile Include="Assets\Script\AudioPlay.cs" />
      <Compile Include="Assets\Script\timer.cs" />
@@ -269,8 +270,44 @@
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="K4os.Compression.LZ4">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/Zstandard.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Ubiety.Dns.Core">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>C:/Users/suh19/UGT1.0/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/MySQLConnector/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
