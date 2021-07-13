@@ -20,6 +20,20 @@ public class SQL : MonoBehaviour
     void Start()
     {
         sqlConnect();
+
+
+        //sqlcmdall("INSERT INTO UGTdb.rank(score) VALUES('23')");
+        DataTable ta = selsql("SELECT * FROM UGTdb.rank");
+
+
+        for (int i = 0; i < ta.Rows.Count; i++)
+        {
+            for (int j = 0; j < ta.Columns.Count; j++)
+            {
+                String str = Convert.ToString(ta.Rows[i][j]);
+                Debug.Log(str);
+            }
+        }
     }
 
     // Update is called once per frame
