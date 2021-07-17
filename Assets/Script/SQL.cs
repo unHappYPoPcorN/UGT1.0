@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Data;
 using MySql.Data;
@@ -8,32 +9,50 @@ using MySql.Data.MySqlClient;
 
 public class SQL : MonoBehaviour
 {
+    public Slider slide0;
+    public Text[] score = new Text[8];
+    public Text[] rank = new Text[8];
+    public Text[] nickname = new Text[8];
+
     MySqlConnection sqlconn = null;
     private string sqlDBip = "180.231.119.223";
     private string sqlDBname = "UGTdb";
     private string sqlDBid = "UGT";
     private string sqlDBpw = "UGT3333";
 
+    private DataTable ta;
 
+    private int page = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         sqlConnect();
 
-
         //sqlcmdall("INSERT INTO UGTdb.rank(score) VALUES('23')");
-        DataTable ta = selsql("SELECT * FROM UGTdb.rank");
+        ta = selsql("SELECT * FROM UGTdb.Rank2 ORDER BY score");
 
+        /*
+                for (int i = 0; i < ta.Rows.Count; i++)
+                {
+                    for (int j = 0; j < ta.Columns.Count; j++)
+                    {
+                        String str = Convert.ToString(ta.Rows[i][j]);
+                        Debug.Log(str);
+                    }
+                }
+        */
 
-        for (int i = 0; i < ta.Rows.Count; i++)
+        if (ta.Rows.Count < 9)
         {
-            for (int j = 0; j < ta.Columns.Count; j++)
-            {
-                String str = Convert.ToString(ta.Rows[i][j]);
-                Debug.Log(str);
-            }
+            refresh(0, ta.Rows.Count);
         }
+        else
+        {
+            refresh(0, 8);
+        }
+
+        slide0.maxValue = (ta.Rows.Count < 9) ? 0 : ta.Rows.Count - 8;
     }
 
     // Update is called once per frame
@@ -85,6 +104,42 @@ public class SQL : MonoBehaviour
         sqldisConnect();
 
         return dt; //데이터 테이블을 리턴함
+    }
+
+    public void refreshSlider()
+    {
+        page = (int)slide0.value;
+
+        refresh(page, page + 8);
+
+        slide0.value = page;
+    }
+
+    private void refresh(int page, int rows)
+    {
+        for (int i = page; i < rows; i++)
+        {
+            for (int j = 0; j < ta.Columns.Count; j++)
+            {
+                String str = Convert.ToString(ta.Rows[i][j]);
+
+                switch (j)
+                {
+                    case 0:
+                        score[i - page].text = str;
+                        break;
+                    case 1:
+                        nickname[i - page].text = str;
+                        break;
+                    default:
+                        Debug.Log("");
+                        break;
+
+                }
+
+                rank[i - page].text = (i + 1).ToString();
+            }
+        }
     }
 
 }
