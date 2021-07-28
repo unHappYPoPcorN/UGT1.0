@@ -43,10 +43,12 @@
      <Compile Include="Assets\Script\SFXPlay.cs" />
      <Compile Include="Assets\Script\Tab.cs" />
      <Compile Include="Assets\Script\SQL.cs" />
+     <Compile Include="Assets\Script\Stage2.cs" />
      <Compile Include="Assets\Script\DbGauge.cs" />
      <Compile Include="Assets\Script\AudioPlay.cs" />
      <Compile Include="Assets\Script\timer.cs" />
      <Compile Include="Assets\Script\BGMSlide.cs" />
+     <Compile Include="Assets\Script\timer2.cs" />
      <None Include="Assets\Packages\System.Buffers.4.5.1\useSharedDesignerContext.txt" />
      <None Include="Assets\Packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
      <None Include="Assets\CasualGameBGM05\ReadMe.txt" />
@@ -285,6 +287,9 @@
     <Reference Include="System.Buffers">
         <HintPath>C:/Users/suh19/UGT1.0/Assets/Packages/System.Buffers.4.5.1/lib/netstandard2.0/System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="I18N">
+        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/I18N.dll</HintPath>
+    </Reference>
     <Reference Include="System.Memory">
         <HintPath>C:/Users/suh19/UGT1.0/Assets/Packages/System.Memory.4.5.4/lib/netstandard2.0/System.Memory.dll</HintPath>
     </Reference>
@@ -293,9 +298,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>C:/Users/suh19/UGT1.0/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="I18N">
-        <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/I18N.dll</HintPath>
     </Reference>
     <Reference Include="I18N.West">
         <HintPath>C:/Users/suh19/UGT1.0/Assets/Plugins/I18N.West.dll</HintPath>
