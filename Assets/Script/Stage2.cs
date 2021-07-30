@@ -8,7 +8,7 @@ public class Stage2 : MonoBehaviour
 {
 
     System.Random rand = new System.Random();
-
+    public Image dangerImg;
     public Image[] keyImg = new Image[12];
     int keyIdx;
     struct Keyin
@@ -23,10 +23,18 @@ public class Stage2 : MonoBehaviour
 
     char needKey;
     Boolean needKeydown;
+    Boolean keyInputAble;
+    float keyInBlockTimer;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        keyInputAble = true;
+
+        keyInBlockTimer = 0;
+
+        dangerImg.gameObject.SetActive(false);
 
         {
             keys[0] = 'Q';
@@ -71,7 +79,24 @@ public class Stage2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (keyInputAble)
+        {
+            dangerImg.gameObject.SetActive(false);
+            keyInBlockTimer = 0;
+        }
+        else
+        {
+            dangerImg.gameObject.SetActive(true);
+            keyInBlockTimer = keyInBlockTimer + Time.deltaTime;
+            Debug.Log(keyInBlockTimer);
+        }
+
+        if (keyInBlockTimer > 1.0f)
+        {
+            keyInputAble = true;
+        }
+
+        if (Input.anyKeyDown & keyInputAble)
         {
             foreach (var dic in keyDictionary)
             {
@@ -95,6 +120,7 @@ public class Stage2 : MonoBehaviour
     private void wrongKey()
     {
         Debug.Log("wrong key!");
+        keyInputAble = false;
     }
 
     private void KeyDown_Q()
