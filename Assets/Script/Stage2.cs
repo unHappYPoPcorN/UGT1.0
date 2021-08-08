@@ -8,6 +8,7 @@ public class Stage2 : MonoBehaviour
 {
 
     System.Random rand = new System.Random();
+    public Animator animator;
     public Image dangerImg;
     public Image[] keyImg = new Image[12];
     int keyIdx;
@@ -28,8 +29,9 @@ public class Stage2 : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-
+    {       
+        animator = gameObject.GetComponent<Animator>();
+         
         keyInputAble = true;
 
         keyInBlockTimer = 0;
@@ -110,6 +112,7 @@ public class Stage2 : MonoBehaviour
 
     private void keyChange()
     {
+
         needKeydown = true;
         keyIdx = rand.Next(0, 12);
         needKey = keys[keyIdx];
