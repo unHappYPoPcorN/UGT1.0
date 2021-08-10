@@ -4,20 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class Stage2 : MonoBehaviour
+[System.Serializable]
+public class MapArray //행에 해당되는 이름
+{
+    public Sprite[] scene;
+}
+
+public class Stage2 : CameraShake
 {
 
     System.Random rand = new System.Random();
-    public Animator animator;
-    public Image dangerImg;
+    public MapArray[] sprite;
     public Image[] keyImg = new Image[12];
+    public GameObject cutScene;
+    public Slider slTime;
+    public Text clearTxt;
+    public GameObject result;
+    SpriteRenderer cutSprite;
+    float timeLeft;
     int keyIdx;
-    struct Keyin
-    {
-        public char k;
-        public Boolean needPress;
-    };
-
+    int mIdx;
+    int sIdx;
     Dictionary<KeyCode, Action> keyDictionary;
 
     char[] keys = new char[12];
@@ -29,14 +36,20 @@ public class Stage2 : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {       
-        animator = gameObject.GetComponent<Animator>();
-         
-        keyInputAble = true;
+    {
 
+        cutSprite = cutScene.GetComponent<SpriteRenderer>();
+
+        result.SetActive(false);
+
+        mIdx = 0;
+        sIdx = 0;
+
+        imgChange();
+
+        keyInputAble = true;
         keyInBlockTimer = 0;
 
-        dangerImg.gameObject.SetActive(false);
 
         {
             keys[0] = 'Q';
@@ -83,14 +96,11 @@ public class Stage2 : MonoBehaviour
     {
         if (keyInputAble)
         {
-            dangerImg.gameObject.SetActive(false);
             keyInBlockTimer = 0;
         }
         else
         {
-            dangerImg.gameObject.SetActive(true);
             keyInBlockTimer = keyInBlockTimer + Time.deltaTime;
-            Debug.Log(keyInBlockTimer);
         }
 
         if (keyInBlockTimer > 1.0f)
@@ -110,6 +120,34 @@ public class Stage2 : MonoBehaviour
         }
     }
 
+    private void imgChange()
+    {
+        cutSprite.sprite = sprite[mIdx].scene[sIdx];
+    }
+
+    private void rightkey()
+    {
+        if (sIdx + 1 == sprite[mIdx].scene.Length)
+        {
+            if (mIdx + 1 == sprite.Length)
+            {
+                showResult();
+            }
+            else
+            {
+                sIdx = 0;
+                mIdx++;
+                keyChange();
+            }
+        }
+        else
+        {
+            sIdx++;
+            keyChange();
+        }
+        imgChange();
+    }
+
     private void keyChange()
     {
 
@@ -122,8 +160,18 @@ public class Stage2 : MonoBehaviour
 
     private void wrongKey()
     {
-        Debug.Log("wrong key!");
         keyInputAble = false;
+
+        imgChange();
+        Shake();
+    }
+
+    private void showResult()
+    {
+        timeLeft = slTime.maxValue - slTime.value;
+        clearTxt.text = ("남은시간 : " + timeLeft.ToString());
+        result.SetActive(true);
+        Time.timeScale = 0;
     }
 
     private void KeyDown_Q()
@@ -131,7 +179,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'Q')
         {
             keyImg[0].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -140,7 +188,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'W')
         {
             keyImg[1].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -149,7 +197,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'E')
         {
             keyImg[2].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -158,7 +206,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'A')
         {
             keyImg[3].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -167,7 +215,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'S')
         {
             keyImg[4].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -176,7 +224,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'D')
         {
             keyImg[5].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -185,7 +233,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'I')
         {
             keyImg[6].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -194,7 +242,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'O')
         {
             keyImg[7].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -203,7 +251,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'P')
         {
             keyImg[8].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -212,7 +260,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'J')
         {
             keyImg[9].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -221,7 +269,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'K')
         {
             keyImg[10].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }
@@ -230,7 +278,7 @@ public class Stage2 : MonoBehaviour
         if (needKey == 'L')
         {
             keyImg[11].gameObject.SetActive(false);
-            keyChange();
+            rightkey();
         }
         else wrongKey();
     }

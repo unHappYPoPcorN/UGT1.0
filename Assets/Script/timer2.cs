@@ -12,7 +12,7 @@ public class timer2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         TimeTxt = GameObject.Find("Time").GetComponent<Text>();
         Timer = 0;
         slTime = GetComponent<Slider>();
@@ -21,9 +21,9 @@ public class timer2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         Timer += Time.deltaTime;
         slTime.value = slTime.maxValue - Timer;
-        TimeTxt.text ="남은시간" + (100 - Timer).ToString();
+        TimeTxt.text = "남은시간 : " + (100 - Timer).ToString();
     }
 }
